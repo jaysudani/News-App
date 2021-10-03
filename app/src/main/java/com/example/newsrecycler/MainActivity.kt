@@ -4,15 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity(), NewsItemClick {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager= LinearLayoutManager(this)
         val items = fetchdata()
-        val adapter : NewsLyoutAdepater = NewsLyoutAdepater(items,this)
+        val adapter = NewsLyoutAdepater(items,this)
         recyclerView.adapter= adapter
 
     }
