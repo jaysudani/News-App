@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity(), NewsItemClick {
     }
 
     private fun fetchdata(){
-        val url= "https://newsapi.org/v2/top-headlines?country=us&apiKey=b4ec34d7373647bdb132268273b91cce"
         Log.d("response error 1","api check")
         val jsonObjectRequest = object:JsonObjectRequest(Request.Method.GET,url,null,
             {
